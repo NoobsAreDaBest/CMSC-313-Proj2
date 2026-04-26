@@ -1,0 +1,8 @@
+Only works for positive numbers
+
+as -o output.o proj2_313.s  
+ld -o test output.o
+test
+
+Enter a number to double it!: *input your number here*
+The double is: *your number doubled*
