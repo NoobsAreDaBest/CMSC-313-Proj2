@@ -1,8 +1,8 @@
 Only works for positive numbers
 
-as -o output.o proj2_313.s  
-ld -o test output.o
-test
+as -o proj2_313.o proj2_313.s  
+ld -o proj2 proj2_313.o
+proj2
 
 Enter a number to double it!: *input your number here*
 The double is: *your number doubled*
