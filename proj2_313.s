@@ -85,21 +85,21 @@ loop:
         xor %rbx, %rbx
         movb (%rsi,%rcx), %bl
         cmp $0x30, %bl  #compare the digit to ascii val of 0
-        jl end
+        jl check
         cmp $0x39, %bl  #compare the digit to ascii val of 9
-        jg end
+        jg check
         sub $0x30, %bl
         add %rbx, %rax  #store
         mov $10, %rbx
         mul %rbx        #Multiply by 10 to make sure its spot is saved in next loop
         inc %rcx        #cycle to next digit
         jmp loop
-end:
+check:
         cmp $0, %rcx    #never looped case
-        je pop
+        je restore
         mov $10, %rbx   #get rid of uneeded multiplication
         div %rbx
-pop:
+restore:
         pop %rsi
         pop %rdx
         pop %rcx
